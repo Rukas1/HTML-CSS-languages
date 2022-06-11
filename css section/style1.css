@@ -1,0 +1,37 @@
+body {
+    background-color: #ddd;
+}
+
+p{font-family: Verdana, Geneva, Tahoma, sans-serif;}
+
+p.texte {
+    color: mediumaquamarine;
+    font-variant: small-caps;
+}
+
+#block {
+    background-color: aquamarine;
+    height: 100px;
+    width: 100px;
+}
+
+div p {
+    color: crimson;
+}
+
+span.mot {
+    color: #ffea60;
+}
+
+p .mot {
+    background-color: aqua;
+}
+
+div .mot {
+    text-decoration: underline;
+}
+
+p[title] {
+    text-decoration: underline;
+}
+

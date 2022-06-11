@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>page5</title>
+    </head>
+    <body>
+        <h2>Inscription</h2>
+        <form method="post" action="" name="inscription" autocomplete="on">
+            <p><label for="nom">Nom</label> : <input type="text" id="nom" name="userName" required placeholder="Saoinji"></p>
+            <p><label for="prenom">Prenom</label> : <input type="text" id="prenom" name="userFirstName" required placeholder="Sekai"></p>
+            <p><label for="dateOfBirth">Date de Naissance</label> : <input type="date" name="dateDeNaissance" required id="dateOfBirth"></p>
+            <p><label for="avatar">Avatar</label> : <input type="file" id="avatar" name="avatar"></p>
+            <p><label for="back">Couleur de fond</label> : <input id="back" type="color" name="couleurDeFond" value="#ffffff"></p>
+            <p><label for="site">Votre siteweb</label> : <input type="url" name="userSiteweb" id="site"></p>
+            <p><label for="email">Email</label> : <input type="email" required id="email" name="email" placeholder="monEmail@mail.com"></p>
+            <p><label for="phone">Telephone</label> : <input type="tel" id="phone" name="tel" required></p>
+            <p><label for="password">Mot de passe</label> : <input type="password" name="password" id="password" required></p>
+            <p><label for="REpassword">Ressaisir votre mot de passe</label> : <input type="password" name="REpassword" id="REpassword" required></p>
+            <p><label for="newLetter">S'incrire aux news letters</label> : <input type="checkbox" name="news" id="newLetter"></p>
+            <pre><input type="reset" value="Reset">    <input type="submit" value="Submit"></pre>
+        </form>
+        <hr>
+        <form method="post" action="" id="formulaire" name="inscription" autocomplete="on">
+            <fieldset form="formulaire">
+                <legend>Inscription</legend>
+                <p><label for="nom">Nom</label> : <input type="text" id="nom" name="userName" required placeholder="Saoinji"></p>
+                <p><label for="prenom">Prenom</label> : <input type="text" id="prenom" name="userFirstName" required placeholder="Sekai"></p>
+                <p><label for="dateOfBirth">Date de Naissance</label> : <input type="date" name="dateDeNaissance" required id="dateOfBirth"></p>
+                <p><label for="avatar">Avatar</label> : <input type="file" id="avatar" name="avatar"></p>
+                <p><label for="back">Couleur de fond</label> : <input id="back" type="color" name="couleurDeFond" value="#ffffff"></p>
+                <p><label for="site">Votre siteweb</label> : <input type="url" name="userSiteweb" id="site"></p>
+                <p><label for="email">Email</label> : <input type="email" required id="email" name="email" placeholder="monEmail@mail.com"></p>
+                <p><label for="phone">Telephone</label> : <input type="tel" id="phone" name="tel" required></p>
+                <p><label for="password">Mot de passe</label> : <input type="password" name="password" id="password" required></p>
+                <p><label for="REpassword">Ressaisir votre mot de passe</label> : <input type="password" name="REpassword" id="REpassword" required></p>
+                <p><label for="newLetter">S'incrire aux news letters</label> : <input type="checkbox" name="news" id="newLetter"></p>
+                <pre><input type="reset" value="Reset">    <input type="submit" value="Submit"></pre>
+            </fieldset>
+        </form>
+        <hr>
+        <form method="post" action="" id="formulaire" name="inscription" autocomplete="on">
+            <fieldset form="formulaire">
+                <legend>Requis</legend>
+                <p><label for="nom">Nom</label> : <input type="text" id="nom" name="userName" required placeholder="Saoinji"></p>
+                <p><label for="prenom">Prenom</label> : <input type="text" id="prenom" name="userFirstName" required placeholder="Sekai"></p>
+                <p><label for="dateOfBirth">Date de Naissance</label> : <input type="date" name="dateDeNaissance" required id="dateOfBirth"></p>
+                <p><label for="email">Email</label> : <input type="email" required id="email" name="email" placeholder="monEmail@mail.com"></p>
+                <p><label for="phone">Telephone</label> : <input type="tel" id="phone" name="tel" required></p>
+                <p><label for="password">Mot de passe</label> : <input type="password" name="password" id="password" required></p>
+                <p><label for="REpassword">Ressaisir votre mot de passe</label> : <input type="password" name="REpassword" id="REpassword" required></p>
+            </fieldset>
+            <fieldset form="formulaire">
+                <legend>NSA action</legend>
+                <p><label for="avatar">Avatar</label> : <input type="file" id="avatar" name="avatar"></p>
+                <p><label for="back">Couleur de fond</label> : <input id="back" type="color" name="couleurDeFond" value="#ffffff"></p>
+                <p><label for="site">Votre siteweb</label> : <input type="url" name="userSiteweb" id="site"></p>
+                <p><label for="newLetter">S'incrire aux news letters</label> : <input type="checkbox" name="news" id="newLetter"></p>
+                <select form="formulaire" name="choixJeux">
+                    <optgroup label="Yandere Game"> 
+                        <option value="ddlc">Doki Doki Litterature Club</option>
+                        <option value="schoolDays">School Days</option>
+                    </optgroup>
+                    <optgroup label="FPS Game">
+                        <option value="Fortnite">Fortnite</option>
+                        <option value="CS:GO">CS:GO</option>
+                    </optgroup>
+                </select>
+                <p>Choisir un OS : <input list="choixOS"></p>
+                    <datalist id="choixOS">
+                        <option value="Windows">
+                        <option value="GNU/linux">
+                        <option value="MacOS">
+                    </datalist>
+                <p><textarea name="comment" rows="10" cols="100" placeholder="Un commentaire..."></textarea></p>
+            </fieldset>
+            <pre><input type="reset" value="Reset">    <button type="button" onclick="playMusic();">Jouer le son de ta mort...</button>    <input type="submit" value="Submit"></pre>
+        </form>
+    </body>
+</html>

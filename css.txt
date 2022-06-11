@@ -1,0 +1,692 @@
+CSS : cascading style sheet 1996
+
+commentaire en css : /* ceci est un commentaire */
+
+Lier une page css avec page html, dans head (html) :
+<link rel="stylesheet" href="./fichier.css">
+rel : relation
+href : lien vers fichier
+
+Dans le head (html) :
+<style>
+    /* stylisation */
+</style>
+
+Directement sur une balise :
+EX. 
+<p style=""></p>
+
+syntax :
+
+<selecteur> {
+    <propriétés>: <valeur>;
+    <propriétés>: <valeur>;
+    <propriétés>: <valeur>;
+}
+
+#monId -> tous les element avec l'id monId
+div#bloc -> dans tous les div celui qui a l'id bloc
+div #bloc -> l'unique element dans tous les div avec l'id bloc
+p span.CR -> span dans tous les p avec la class CR
+.MaXlass -> tous les element avec la class MaXlass
+p[title] -> tous les elements p qui ont l'attribut title
+p[title="lien"] -> tous les elements p qui ont l'attribut title sur lien
+header, body -> l'(les) élément(s) body et header(s)
+...
+
+Le css applique le style de maniere sequentiel donc attention au override
+sauf pour le css en inline. Car on lit les fichier css puis le body de html
+
+Ajouter un fichier de reset css pour unifier l'affichage sur tous les navigateurs
+
+Stylisation de texte
+
+valeur "general":
+unset 
+initial
+inherit
+
+{
+    font-style: ;
+}
+
+->
+    italic
+    normal 
+    oblique
+
+{
+    font-variant: ;
+}
+
+-> 
+    normal
+    small-caps
+    
+{
+    font-weight: ;
+}
+
+->
+    normal
+    100
+    ...
+    900
+    bold
+    bolder
+    lighter
+
+(Arrete de faire du listing de valeur...)
+
+{
+    font-size: ;
+}
+
+em : 1em : 100% de l'element parent 
+rem : 1rem : 100% de l'element root (html)
+
+{
+    line-height: ;
+}
+
+{
+    font-family: ;
+}
+
+la meta propriété :
+
+{
+    font: ;
+}
+
+----------------------
+
+{
+    text-decoration: ;
+}
+
+{
+    text-decoration-color: ;
+}
+{
+    text-decoration-line: ;
+}
+{
+    text-decoration-style: ;
+}
+
+{
+    text-shadow: ;
+}
+
+{
+    text-transform: ;
+}
+
+{
+    text-align: ;
+}
+
+{
+    vertical-align: ; /* aligner sur l'axe vertical pas mal sur les images*/
+}
+
+{
+    text-indent: ;
+}
+
+{
+    text-overflow: ;
+}
+
+{
+    letter-spacing: ;
+}
+
+{
+    white-space: ;
+}
+
+->
+    pre
+    ...
+
+{
+    word-spacing: ;
+}
+
+{
+    word-break: ;
+}
+
+{
+    word-wrap: ;
+}
+
+{
+    direction: ;
+}
+
+{
+    text-justify: ;   // don't use, doesn't work on chrome....
+}
+
+{
+    text-align-last: ;
+}
+
+couleur et fond 
+
+{
+    color: ;
+}
+
+en hexa, avec le nom, en rgb/rgba, hsl/hsla, ...
+transparent : transparant
+
+{
+    opactity: ;
+}
+
+{
+    background-color: ;
+}
+
+{
+    background-image: ;
+}
+
+url()
+
+{
+    background-position: ;
+}
+
+{
+    background-repeat: ;
+}
+
+{
+    background-size: ;
+}
+
+{
+    background-clip: ;
+}
+
+{
+    background-attachment: ;
+}
+
+{
+    background-origin: ;
+}
+
+meta-propriété :
+{
+    background: couleur image position size repetition origin clip attachement;
+}
+
+styliser liste
+
+{
+    list-style-image: ;
+}
+
+{
+    list-style-position: ;
+}
+
+{
+    list-style-type: ;
+}
+
+hiragana / katakana : trop bien !!
+
+meta-propriété :
+{
+    list-style: ;
+}
+
+modele de boite : 
+
+de type : block / inline
+
+{
+    height: ;
+}
+{
+    width: ;
+}
+{
+    min-width: ;
+}
+{
+    max-width: ;
+}
+{
+    min-height: ;
+}
+{
+    max-header: ;
+}
+{
+    padding: ;
+}
+{
+    padding-top: ;
+}
+{
+    padding-right: ;
+}
+{
+    padding-left: ;
+}
+{
+    padding-bottom: ;
+}
+{
+    margin: ;
+}
+{
+    margin-top: ;
+}
+{
+    margin-right: ;
+}
+{
+    margin-left: ;
+}
+{
+    margin-bottom: ;
+}
+{
+    overflow: ;
+}
+{
+    overflow-x: ;
+}
+{
+    overflow-y: ;
+}
+{
+    overflow-wrap: ; /* word-wrap: ;*/
+}
+
+{
+    border: ;
+}
+{
+    border-width: ;
+}
+{
+    border-style: ;
+}
+{
+    border-color: ;
+}
+{
+    border-top-width: ;
+    ...
+}
+{
+    border-image: <source> <slice> <width> <outset> <repeat>;
+}
+{
+    border-radius: ;
+}
+{
+    border-top-left-radius: ;
+    border-bottom-left-radius: ;
+    ...
+}
+{
+    outline: ;
+}
+{
+    outline-width: ;
+}
+{
+    outline-color: ;
+}
+{
+    outline-style: ;
+}
+{
+    outline-offset: ;
+}
+
+tableaux :
+
+Ne pas oublier border: ; sur td ou tr ou table...
+
+{
+    border-collapse: ;
+}
+
+affichage et positionnement 
+
+{
+    display: ;
+        block
+        inline
+        inline-block
+        list-item
+        inline-table
+        flex
+        grid
+}
+
+deux types d'element :
+-block
+-inline
+
+block -> boite (l'un au dessus des autres)
+par defaut : display: block;
+
+inline -> les elements se suivent
+par defaut : display: inline;
+
+{
+    visibility: ;
+}
+
+{
+    opactity: ;
+}
+
+min: 0
+max: 1
+
+{
+    position: ;
+        static (par defaut)
+        relative (par rapport au parent)
+        absolute (par rapport a l'element idem qui a aussi absolute/relative/fixed)
+}
+
+{
+    top: ;
+    bottom: ;
+    left: ;
+    right: ;
+}
+
+{
+    z-index: ;
+}
+{
+    float: ;
+}
+{
+    clear: ;
+}
+
+modèle avancé de boite 
+
+{
+    box-shadow: ;
+}
+
+{
+    box-sizing: ;
+        content-box (default)
+        border-box
+}
+
+flexbox
+organiser des elements à petite échelle
+
+{
+    display: flex;
+            inline-flex
+}
+
+{
+    flex-direction: ;
+}
+
+{
+    flex-wrap: ;
+}
+
+{
+    flex-flow: <direction> <wrap>;
+}
+
+{
+    justify-content: ;
+}
+
+{
+    align-items: ;
+            stretch (default)
+}
+
+{
+    order: ;
+        commence a compter a partir de.... 1 yep...
+}
+
+{
+    flex-grow: ;
+}
+
+{
+    flex-shrink: ;
+}
+
+{
+    flex-basis: ;
+        taille initial en px/...
+}
+
+{
+    flex: <grow> <shrink> <basis>; sur les flex-items
+}
+
+{
+    align-self: ;
+}
+
+css grid 
+pour les grosses parties
+
+{
+    display: grid; // ou -ms-grid (compa IE)
+}
+
+{
+    grid-template-columns: ;
+}
+
+{
+    grid-template-rows: ;
+}
+
+1fr 
+
+pour rappel : repeat(3, 1fr)
+
+{
+    grid-auto-rows: ;
+}
+
+{
+    grid-auto-columns: ;
+}
+
+{
+    grid-auto-flow: ;
+                row (par defaut)
+}
+
+{
+    grid-column: ;
+}
+
+si 3 colonnes : 
+grid-culumn: 1; == grid-culumn: 1 / 3;
+
+1 / -1 : toute la partie
+
+{
+    grid-row: ;
+}
+
+alt px/fr/%/... :
+    
+    auto
+    min-content
+    max-content
+    fit-content(50px)
+    minmax(100px, 200px)
+
+{
+    grid-row-start: ;
+}
+
+{
+    grid-row-end: ;
+}
+
+{
+    grid-column-start: ;
+}
+
+{
+    grid-column-end: ;
+}
+
+meta propriété
+{
+    grid-template: <rows> / <columns> ;
+}
+
+{
+    grid-area: ;
+}
+
+{
+    grid-template-areas: ;
+}
+
+un espace libre : . (ou plusieurs point ...)
+
+{
+    justify-content: ;
+}
+
+{
+    align-content: ;
+}
+
+{
+    place-content: <justify-content> / <align-content>; // ne marche totalement pas
+}
+
+{
+    justify-items: ;
+            stretch (default)
+}
+
+{
+    align-items: ;
+}
+
+{
+    place-items: <justify-item> / <align-item>; // ne marche pas 
+}
+
+{
+    align-self: ;
+}
+
+{
+    justify-self: ;
+}
+
+{
+    place-self: <justify-self> / <align-self>; // ne marche pas
+}
+
+{
+    (grid-)column-gap: ;
+}
+
+{
+    (grid-)row-gap: ;
+}
+
+{
+    (grid-)gap: ;
+}
+
+{
+    order: ;
+}
+
+{
+    grid: ;
+}
+
+flexbox + grid = ❤️
+
+les media queries
+
+deja cette ligne : 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" media="screen and (max-width: 600)" href="small.css">
+
+@media()
+
+width
+min-width
+max-width
+
+par exemple :
+
+@media(max-width: 600px) {
+
+    // propriétés css réécrites...
+}
+
+@media (max-width: 600px) {
+    
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: "entete" "principale" "barre" "pied";
+    }
+}
+
+les types d'appareil: 
+
+all
+screen
+speech
+print
+
+pour plusieurs requetes:
+
+and
+
+il existe aussi :
+not
+only
+
+@media screen and (min-width: 600px) {}
+@media screen and (min-width: 768px) {}
+@media screen and (min-width: 992px) {}
+@media screen and (min-width: 1024px) {}
+
+/*
+
+xs -> 568px
+sm -> 768px
+md -> 992px
+lg -> 1024px
+xl -> 1280px
+
+*/
+

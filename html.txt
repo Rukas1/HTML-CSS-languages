@@ -1,0 +1,723 @@
+HTML (HyperTextMarkupLanguage) parut en 1993 par son créateur Tim-Berners Lee...
+CSS (Cascading Style Sheet) 1996...
+
+See here:
+    -https://en.wikipedia.org/wiki/HTML
+    -https://youtu.be/u5W2NWItytc
+    -https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3
+    -https://openclassrooms.com/fr/courses/1946386-comprendre-le-web
+
+ALLER, ON COMMENCE !
+
+Page web minimal :
+
+fichier principale : index.html
+
+<!------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> <!--en premier-->
+        <title>Ma page web !</title>
+    </head>
+    <body>
+        <p>Du texte</p>
+    </body>
+</html>
+
+<!------------------------------------------------->
+
+Fonctionnement balises
+<balise>du texte</balise>
+<balise_orpheline>
+
+<meta charset="utf-8">
+
+charset => un attribut defini
+
+<ba>bonjout <bb>tout le </bb>monde</ba> <!--imbrication de balise-->
+Ici les balises 'bb' heritent des proprietes des balises 'ba'.
+
+<!------------------------------------------------->
+
+formatage texte :
+https://youtu.be/w2knKi0ZQps
+
+quelques balises:
+
+<p></p>
+<br> <!-- pas besoin de faire <br/> : Xhtml-->
+<hr> : trait de separation
+
+<strong></strong>
+<em></em>
+<-->
+    <del></del>
+    <ins></ins>
+<-->
+<mark></mark>
+
+Vieille balises:
+<b></b> : moins d'importance que strong (anciennement, met en gras)
+<i></i> : met en evidence (anciennement, met en italique)
+<s></s> : information barée
+
+<!----->
+
+balises de titres:
+<h1></h1>
+<h2></h2>
+<h3></h3>
+<h4></h4>
+<h5></h5>
+<h6></h6>
+
+un seul h1 dans une section (EX. un seul h1 dans body)
+les autres on s'en fout...
+
+citations:
+<q></q> : citation externe
+    <q cite="http://source_de_blabla/">citation blablalba</q>
+
+<cite></cite> : citer le titre d'un doc, evenement, livre, ...(pas d'auteur,....)
+
+<blockquote></blockquote> : bloque de citation
+    <blockquote cite="http://de meme que pour en haut"> </blockquote>
+
+Texte no-spoil:
+
+<details>
+    bla bla bla
+</details>
+
+et pour changer le 'details' par defaut:
+<details>
+    <summary>Click Here</summary>
+    bla bla bla
+</details>
+
+Pour faire un lien :
+<a></a> avec l'attribut href, title, target, ...
+
+href : lien ou mailto ou fichier a télécharger
+target : ouvre dans un autre onglet avec _blank
+title: infobulle
+
+ex: 
+<a href="https://jasonchampagne.fr">Site personnel de Jason</a>
+<a href="#maSection">Aller vers maSection</a>
+<a href="http://lien.com" title="Description">UnLien</a>
+<a href="https://youtube.com" target="_blank">Ouverture nouvel onglet</a>
+<a href="mailto:chuck@norris.com">Envoyer un e-mail</a>
+<a href="./fichier.zip">Download</a>
+
+https://youtu.be/HSWzav5yc6Y
+
+definir une abbréviation :
+title : balise universel (pour toutes les balises : met une infobulle)
+
+<p>Creer un page <abbr title="HyperTextMarkupLanguage">HTML</abbr></p>
+
+Balise de context :
+soit dans body soit article
+<address>
+    Techer Lucas<br>
+    16 rue des waifus<br>
+    XXXX MaVille<br>
+    <a href="mailto: ichinoseai731@gmail.com">ichinoseai731@gmail.com</a>
+</address>
+
+
+Lecture de droite a gauche, etc...
+
+<p>Salut : <bdi>オハヨ</bdi></p>
+ou 
+<p>Salut : <bdi dir="auto">オハヨ</bdi></p>
+
+<p>Salut : <bdi dir="rtl">zdefd</bdi></p>
+
+2 posibilités :
+rtl : right to left
+ltr : left to right
+
+pour imposer : 
+<bdo></bdo>
+avec : dir="" ; auto ; rtl ; ltr
+
+Les definitions :
+Pour la semantique.
+
+<dfn> : definition d'un terme
+<p><dfn>HTML</dfn> est un langage informatique pour realiser des pages web</p>
+
+<dl> : definition list (~lexique)
+<dt> : defintion term
+<dd> : defintion description
+
+<dl>
+    <dt>HTML</dt>
+    <dt>xHTML</dt>
+    <dd>langage informatique pour realiser des pages web<dd>
+    <dt>CSS</dt>
+    <dd>langage informatique pour mettre en forma une page web</dd>
+</dl>
+
+boite de dialogue :
+<dialog>
+-> plus tard...
+
+balise de progression :
+<progress>
+attribut : value, max
+
+<p>Mon avance en web : <progress value="25", max="100"></progress></p>
+
+<!-------------------------->
+<sub></sub>
+<sup></sup>
+
+<p>Formule du dioxyde de carbone : CO<sub>2</sub></p>
+<p> 100 * 100 = 100<sup>2</sup></p>
+
+<wbr> : word break
+
+<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<wbr>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<wbr>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<wbr>bbbbbbbbbbbbbbbbbbb</p>
+
+formatage technique :
+
+<code> : code informatique
+
+<p>Dire bonjour : <code>print("hello world");</code></p>
+
+<kbd> : keyboard
+
+<p>save the doc : <kbd>Ctrl + S</kbd></p>
+
+<meter> : une valeur (numerique), scalaire, metrique
+attribut :
+-value
+-min
+-max
+-high (seuil ou la valeur est dite "haute")
+-low (seuil ou la valeur est dite "basse")
+-optimum (seuil ou la valeur est dite "optimimal")
+
+<p>Valeur en pourcentage : <meter value="0.25">25%</meter></p>
+
+<output> : par exemple le resultat d'un calcul
+utile dans les formulaires
+<p>2 + 4 = <output>6</output></p>
+
+<pre> : préformaté
+
+<pre>
+Bonjour tout le monde.
+
+Ceci est une        nouvelle phrase.
+</pre>
+
+<pre><code>if (age >= 18) 
+{
+    printf("Tu est majeur");
+}
+</code></pre>
+
+domaine de l'ecriture :
+
+<ruby> : prononciation (romaji,...)
+<rt>
+<rp>
+
+<ruby>
+    オ <rt>o<rt>
+    ハ <rt>ha<rt>
+    ヨ <rt>yo</rt>
+</ruby>
+
+<ruby>
+    オ <rp>(</rp><rt>o<rt><rp>)</rp>
+    ハ <rp>(</rp><rt>ha<rt><rp>)</rp>
+    ヨ <rp>(</rp><rt>yo</rt><rp>)</rp>
+</ruby>
+
+
+<samp> : resultat de programmme
+
+<p>Ce code : <code>printf("hello world!");</code></p>
+<p>Va afficher -> <samp>hello world!</samp></p>
+
+<time> ->
+attibut :
+datetime = "" 
+
+<p>Debut du concours le <time datetime="2018-01-25 13:25:04">25 janvier 2018</time></p>
+
+<var> : variable 
+
+<p>information : <var>x = 14</var></p>
+<p>information : <var>x</var> = <var>14</var></p>
+
+<p>Mathematiques : <var>x<sup>4</sup></var> + 5</p>
+
+
+Les listes:
+
+liste a puce :
+<ul>
+    <li>Un element</li>
+    <li>Un element</li>
+    <li>Un element</li>
+    <li>Un element</li>
+    <li>Un element</li>
+</ul>
+
+ou :
+
+<ul>
+    <li>Un element
+    <li>Un element
+    <li>Un element
+    <li>Un element
+    <li>Un element
+</ul>
+
+attibuts obsolete :
+compact, type.
+
+liste numerotée :
+<ol>
+    <li>hello</li>
+    <li>world</li>
+</ol>
+
+attributs :
+reversed ->
+
+<ol reversed>
+    <li>hello</li>
+    <li>world</li>
+</ol>
+
+start = "X" ->
+
+<ol start="10">
+    <li>hello</li>
+    <li>world</li>
+</ol>
+
+type = "a" ->
+
+<ol type="a">
+    <li>hello</li>
+    <li>world</li>
+</ol>
+
+<ol type="i">
+    <li>hello</li>
+    <li>world</li>
+</ol>
+
+<ol type="I">
+    <li>hello</li>
+    <li>world</li>
+</ol>
+
+Sous liste :
+
+<ol type="A">
+    <li>Hello World!</li>
+    <li>variable
+        <ul>
+            <li>Explication</li>
+            <li>Types Natifs</li>
+            <li>Declaration</li>
+            <li>Affectation</li>
+        </ul>
+    </li>
+</ol>
+
+Tableaux :
+https://youtu.be/yTp_qgvM1LU
+<table></table>
+<caption></caption> : titre du tableau (option)
+<thead></thead> : en-tete du tableau (option)
+<tbody></tbody> : corp du tableau (option)
+<tfoot></tfoot> : pied du tableau (option)
+<tr></tr> : ligne
+<td></td> : cologne
+<th></th> : (<td>) : balise d'en-tete (en gras en html) (option)
+
+attribut : 
+rowspan=""
+colspan=""
+
+Tableaux a double entrés :
+<table>
+    <caption>Listing des Waifus</caption>
+    <thead>
+        <tr>
+            <th>/</th>
+            <th>Lundi</th>
+            <th>Mardi</th>
+            <th>Mercredi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>8h</th>
+            <td rowspan="2">Nothing</td>
+            <td>Nothing</td>
+            <td>Nothing</td>
+        </tr>
+        <tr>
+            <th>10h</th>
+            <td>Nothing</td>
+            <td>Nothing</td>
+        </tr>
+    </tbody>
+</table>
+
+<colgroup>
+    <col class="styleColonne1">
+    <col class="stymeColonnes2ET2" span="2">
+</colgroup>
+
+<th abbr="Nom">Nom du jeu<th>
+
+attributs :
+id -> headers
+
+les formulaires :
+https://youtu.be/L6ld1B2Q98Y
+w3.org/tr/
+
+Le traitement en backend (php, python, nodejs, ...)
+
+<form></form> : base 
+
+attributs : 
+method=""
+        get (defaut/dans l'url) / post
+    
+action="" (destination -> backend)
+    EX. traitement.php /
+
+name="" 
+    EX. "monformulaire"
+
+target=""
+    "_self" (defaut) 
+    "_parent"
+    "_top"
+    "_blank"
+
+autocomplete=""
+    "on" / "off"
+
+enctype="" (l'identiter d'un type de fichier (formulaire d'upload))
+
+accept-charset="" (plusieurs encodage)
+        EX. "utf-8"
+
+<input>
+
+name="" (obligatoire)
+
+<label></label>
+for=""
+
+Strict minimum : 
+<label for="nom">Nom</label> : <input id="nom" name="userName">
+
+<p><label for="nom">Nom</label> : <input id="nom" name="userName"></p>
+
+attribut : 
+    placeholder="text en gris non permanent"
+    autocomplete=""
+    pattern="" (regex)
+    value=""
+    required
+    type=""
+        -->
+            "text" (defaut)
+            "password"
+            "checkbox"
+                -> S'inscrire a la new letter ? <input type="checkbox" name="newLetter">
+            "radio"
+                -> Votre Choix <input type="radio" name="choice"> Oui <input type="radio" name="choice"> Non
+            "color"
+            "date"
+            "datetime-local"
+            "email"
+            "tel"
+            "month"
+            "week"
+            "search"
+            "url"
+            "range"  avec min="" max="" step="" value=""
+            "number" avec  //    //       //      //
+            "hidden"
+            "submit"
+            "reset"
+            "image"
+            etc....
+
+
+
+<form method="post" action="" name="inscription" autocomplete="on">
+    <p><label for="nom">Nom</label> : <input type="text" id="nom" name="userName" required placeholder="Saoinji"></p>
+    <p><label for="prenom">Prenom</label> : <input type="text" id="prenom" name="userFirstName" required placeholder="Sekai"></p>
+    <p><label for="dateOfBirth">Date de Naissance</label> : <input type="date" name="dateDeNaissance" required id="dateOfBirth"></p>
+    <p><label for="avatar">Avatar</label> : <input type="file" id="avatar" name="avatar"></p>
+    <p><label for="back">Couleur de fond</label> : <input id="back" type="color" name="couleurDeFond" value="#ffffff"></p>
+    <p><label for="site">Votre siteweb</label> : <input type="url" name="userSiteweb" id="site"></p>
+    <p><label for="email">Email</label> : <input type="email" required id="email" name="email" placeholder="monEmail@mail.com"></p>
+    <p><label for="phone">Telephone</label> : <input type="tel" id="phone" name="tel" required></p>
+    <p><label for="password">Mot de passe</label> : <input type="password" name="password" id="password" required></p>
+    <p><label for="REpassword">Ressaisir votre mot de passe</label> : <input type="password" name="REpassword" id="REpassword" required></p>
+    <p><label for="newLetter">S'incrire aux news letters</label> : <input type="checkbox" name="news" id="newLetter"></p>
+    <pre><input type="reset" value="Reset">    <input type="submit" value="Submit"></pre>
+</form>
+
+
+<fieldset></fieldset>
+attributs:
+    form=""
+    disabled
+    
+<legend>Titre</legend>
+
+
+<form method="post" action="" id="formulaire" name="inscription" autocomplete="on">
+    <fieldset form="formulaire">
+        <legend>Requis</legend>
+        <p><label for="nom">Nom</label> : <input type="text" id="nom" name="userName" required placeholder="Saoinji"></p>
+        <p><label for="prenom">Prenom</label> : <input type="text" id="prenom" name="userFirstName" required placeholder="Sekai"></p>
+        <p><label for="dateOfBirth">Date de Naissance</label> : <input type="date" name="dateDeNaissance" required id="dateOfBirth"></p>
+        <p><label for="email">Email</label> : <input type="email" required id="email" name="email" placeholder="monEmail@mail.com"></p>
+        <p><label for="phone">Telephone</label> : <input type="tel" id="phone" name="tel" required></p>
+        <p><label for="password">Mot de passe</label> : <input type="password" name="password" id="password" required></p>
+        <p><label for="REpassword">Ressaisir votre mot de passe</label> : <input type="password" name="REpassword" id="REpassword" required></p>
+    </fieldset>
+    <fieldset form="formulaire">
+        <legend>NSA action</legend>
+        <p><label for="avatar">Avatar</label> : <input type="file" id="avatar" name="avatar"></p>
+        <p><label for="back">Couleur de fond</label> : <input id="back" type="color" name="couleurDeFond" value="#ffffff"></p>
+        <p><label for="site">Votre siteweb</label> : <input type="url" name="userSiteweb" id="site"></p>
+        <p><label for="newLetter">S'incrire aux news letters</label> : <input type="checkbox" name="news" id="newLetter"></p>
+    </fieldset>
+    <pre><input type="reset" value="Reset">    <input type="submit" value="Submit"></pre>
+</form>
+
+
+<textarea></textarea>
+
+    attibuts:
+        name=""
+        rows=""
+        cols=""
+        ...
+
+encore des attributs : 
+
+minlength=""
+maxlength=""
+autofocus
+warp="" "hard" / "soft" (defaut)
+et plein d'autres.....
+
+
+<select form="id_form" name="choixOS">
+    <option>Windows</option>
+    <option>GNU/linux</option>
+    <option>MacOS</option>
+</select>
+
+<select form="id_form" name="choixOS">
+    <option value="windows">Windows</option>
+    <option value="linux">GNU/linux</option>
+    <option value="mac">MacOS</option>
+</select>
+
+attribut :
+    size="" "2" /...
+    label=""
+    multiple
+    disable
+
+<select form="id_form" name="choixJeux">
+    <optgroup label="Yandere Game"> 
+        <option value="ddlc">Doki Doki Litterature Club</option>
+        <option value="schoolDays">School Days</option>
+    </optgroup>
+    <optgroup label="FPS Game">
+        <option value="Fortnite">Fortnite</option>
+        <option value="CS:GO">CS:GO</option>
+    </optgroup>
+</select>
+
+<p>Choisir un jeu : <input list="choixOS"></p>
+<datalist id="choixOS">
+    <option value="Windows">
+    <option value="GNU/linux">
+    <option value="MacOS">
+</datalist>
+
+
+<button type="button" onclick="playMusic();">Jouer le son de ta mort...</button>
+
+attributs:
+    formùethod="" "GET" "POST"
+    formaction="" "mapage.html"
+
+Image, son, video....
+
+<img>
+
+attributs:
+    src="" : source
+    alt="" : 
+    width=""  "100" (pixel [only]) "auto" 
+    height=""
+    longdesc="" alt mais long...
+    ...
+
+<img src="https://i.waifu.pics/ynInTFV.jpg" alt="Image">
+
+
+<figure></figure>
+<figcaption></figcaption>
+
+<figure>
+    <img src="https://i.waifu.pics/aD7t0Bc.jpg" alt="">
+    <figcaption>https://i.waifu.pics/aD7t0Bc.jpg</figcaption>
+</figure>
+
+<figure>
+    <img src="https://i.waifu.pics/aD7t0Bc.jpg" alt="" width="300" height="auto">
+    <figcaption><a href="https://i.waifu.pics/aD7t0Bc.jpg">https://i.waifu.pics/aD7t0Bc.jpg</a></figcaption>
+</figure>
+
+
+https://i.waifu.pics/FS9NYz_.png
+https://i.waifu.pics/sS-rREz.jpg
+
+shape = rect -> x1,y1 x2,y2
+        circle -> x,y,r
+        poly -> x1,y1,x2,y2,....x10,y10...
+
+<img usemap="#back" src="https://i.waifu.pics/FS9NYz_.png" alt="" width="300" height="300">
+
+<map name="back">
+    <area href="https://i.waifu.pics/sS-rREz.jpg" shape="rect" coords="0,0 150,150">
+    area...
+</map>
+
+<picture>
+    <source srcset="https://i.waifu.pics/sS-rREz.jpg" media="(min-width: 600px)">
+    <img src="https://i.waifu.pics/pojy7zt.jpg" alt="">
+</picture>
+
+<!--
+    AUDIO : mp3 (compatible partout)
+            wav (compatible partout sauf IE)
+            ogg (compatible sauf IE et Safari)
+
+    VIDEO : mp4 (compatible partout)
+            webm (compatible partoutsauf IE et Safari)
+            ogg (compatible partout sauf IE et Safari)
+-->
+
+<audio></audio> : base
+attributs :
+    src="" 
+    type=""
+    controls
+    hidden
+
+<audio src="./resources/music.mp3" controls>
+    Votre navigateur est trop vieux...
+</audio>
+<audio controls>
+    <source src="./resources/music.mp3" type="audio/mp3">
+    Votre navigateur est trop vieux...
+</audio>
+
+autres attributs :
+    autoplay
+    muted
+    loop
+    preload="" "none" "auto" "metadata"
+    volume="" "0" -> "1.0"  EX. "0.5"
+
+<video></video> : base
+
+attributs : 
+    width=""
+    height=""
+    poster=""    
+
+<video src="./resources/video.mp4" controls width="500" height="auto">
+    Your WebBrowser is too old...
+</video>
+<video controls width="500" height="auto">
+    <source src="./resources/video.mp4" type="video/mp4">
+    Your WebBrowser is too old...
+</video>
+
+structurer une page web 
+
+<div> : bloc de contenue (div : division)
+
+<div>
+    <p id="mainText">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Rem nemo mollitia sapiente officiis quisquam est, sint 
+        illo? Ab necessitatibus recusandae temporibus, dolorum 
+        eos non architecto iusto laborum corrupti velit veniam?
+    </p>
+    <p><a href="#mainText">Texte Principale</a></p>
+</div>
+
+<span> : morceau de texte 
+
+<p>Bonjour je suis <span>Lucas</span></p>
+
+<main> : une seule section main !
+        Le contenue principale
+
+<section> : une partie de votre page
+            prevue pour avoir un titre !
+
+<section>
+    <h1>Mon titre de section</h1>
+</section>
+
+rappel : ne pas faire des sauts de titre
+
+<article></article>
+
+<header></header> : en-tete de body ou bien en-tete d'un <article>
+                    en-tete du parent
+
+<footer></footer> : pied de page // 
+                    //
+
+
+<nav></nav>
+
+<nav class="mainNav">
+    <ul>
+        <li><a href="#">Navigate to...</a></li>
+        <li><a href="#">Navigate to...</a></li>
+        <li><a href="#">Navigate to...</a></li>
+        <li><a href="#">Navigate to...</a></li>
+        <li><a href="#">Navigate to...</a></li>
+        <li><a href="#">Navigate to...</a></li>
+        <li><a href="#">Navigate to...</a></li>
+        <li><a href="#">Navigate to...</a></li>
+    </ul>
+</nav>
+
+<aside></aside>
+

@@ -1,0 +1,28 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eee;
+}
+
+div.container {
+    border: 3px crimson dashed;
+    height: 500px;
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 100px);
+    grid-auto-flow: column;
+    grid-auto-columns: 100px;
+}
+
+div.item {
+    outline: 1px solid lightseagreen;
+    background-color: #0e1116;
+    color: #fff;
+    font-style: bolder;
+    padding: 10px;
+}

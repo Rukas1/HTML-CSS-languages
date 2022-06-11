@@ -1,0 +1,29 @@
+/* *, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+.container {
+    border: 2px dashed crimson;
+    display: grid;
+    grid-template-columns: 1fr 25px 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "entete entete entete"
+                        "principale . lateral"
+                        "pied pied pied";
+}
+
+.item {
+    outline: 1px solid salmon;
+    background-color: #222;
+    color: #fff;
+    font-weight: 800;
+    padding: 10px;
+}
+
+header {grid-area: entete;}
+section {grid-area: principale;}
+aside {grid-area: lateral;}
+footer {grid-area: pied;}
+

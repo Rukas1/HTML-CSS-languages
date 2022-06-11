@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="./reset.css"> -->
+        <!-- <link rel="stylesheet" href="./style2.css"> -->
+        <script>
+
+            function httpGet(url = "https://api.waifu.pics/sfw/waifu") {
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", url, false);
+                xhr.send(null);
+                return JSON.parse(xhr.responseText);
+            }
+
+            function changeImg() {
+                let image = httpGet()["url"];
+                img = document.querySelector("img");
+                img.src = image;
+            }
+
+            function action() {
+                changeImg();
+            }
+        </script>
+        <style>
+            body {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.b5 {
+    background-color: #0e1116;
+    height: max-content;
+    width: max-content;
+    border-radius: 15px;
+}
+
+h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    text-decoration: underline;
+    font-style: normal;
+    margin: 10px 0px 0px 0px;
+    padding: 0;
+}
+
+img {
+    border-radius: 5px;
+    max-width: 200px;
+    margin: 15px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 15px 50px;
+    color: #fff;
+    background-color: #0e1116;
+    border: none;
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+button:active {
+    background-color: #fff;
+    color: #000;
+    outline: 2px solid #000;
+}
+
+        </style>
+        <title>page2</title>
+    </head>
+    <body>
+        <main>
+            <div class="b5">
+                <h2>
+                    Lorem, ipsum dolor.
+                </h2>
+                <img src="https://i.waifu.pics/QtSfemm.jpg">
+            </div>
+            <button type="button" onclick="action();">Pull</button>
+        </main>
+    </body>
+</html>
